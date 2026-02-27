@@ -1,5 +1,5 @@
 /*
- * CLI-OS v1.0-alpha
+ * CLI-OS v1.1
  * Copyright (c) 2026 Yiğit ALP
  *
  * This source code is licensed under the MIT License.
@@ -20,7 +20,7 @@ int main(){
 
     printf("######################################\n");
     printf("#                                    #\n");
-    printf("#          CLI OS v1.0 Alpha         #\n");
+    printf("#          CLI OS v1.1               #\n");
     printf("#   Licensed under the MIT license.  #\n");
     printf("#                                    #\n");
     printf("######################################\n");
@@ -37,6 +37,11 @@ int main(){
         fgets(input, MAX_INPUT, stdin);
         input[strcspn(input, "\n")] = 0;
 
+        if (strcmp(input, "exit") == 0)
+        {
+            break;
+        }  
+
         // Commands
         handle_command(input);
     }
@@ -44,12 +49,3 @@ int main(){
     return 0;
     
 }
-
-/*
-    if (strcmp(input, "help") == 0) {
-        printf("Available commands:\n");
-        printf("help  - Show this message\n");
-        printf("about - About CLI-OS\n");
-        printf("exit  - Exit program\n");
-    }
-*/

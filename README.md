@@ -6,30 +6,44 @@ It focuses on basic input handling and simple command logic.
 
 It is not a real operating system.
 
-Features
+## 🚀 Features:
 
 - Custom terminal prompt
+
 - Basic command system
-- Built-in commands:
-  help
-  about
-  exit
 
-## Build
+- **Built-in commands: help, about, exit, echo, clear, time, random**
 
+- Easy to extend with new commands
+
+## Build:
+Compile with both source files:
 ```bash
-gcc main.c -o cli-os
+gcc main.c commands.c -o cli-os
 ```
-## Run
+## Run:
 ```bash
 ./cli-os
 ```
-## License
 
+## Examples:
+```
+yigit-$ help
+Available commands: help, about, exit, echo, clear, time, random
+
+yigit-$ echo Hello CLI-OS
+Hello CLI-OS
+
+yigit-$ time
+14:35:08
+
+yigit-$ random
+Random number: 42
+```
+## License:
 Licensed under the MIT License.
 See the LICENSE file for more information.
 
-## Author
-
+## Author:
 Yiğit ALP — 2026
-Version 1.0 Alpha
+Version 1.1
