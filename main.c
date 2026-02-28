@@ -20,7 +20,7 @@ int main(){
 
     printf("######################################\n");
     printf("#                                    #\n");
-    printf("#          YIGITUX v1.1              #\n");
+    printf("#            YIGITUX v1.2            #\n");
     printf("#   Licensed under the MIT license.  #\n");
     printf("#                                    #\n");
     printf("######################################\n");
@@ -37,6 +37,9 @@ int main(){
         fgets(input, MAX_INPUT, stdin);
         input[strcspn(input, "\n")] = 0;
 
+        // -------------------
+        // Command: exit
+        // -------------------
         if (strcmp(input, "exit") == 0)
         {
             break;
