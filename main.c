@@ -1,5 +1,5 @@
 /*
- * CLI-OS v1.1
+ * YIGITUX v1.1
  * Copyright (c) 2026 Yiğit ALP
  *
  * This source code is licensed under the MIT License.
@@ -20,7 +20,7 @@ int main(){
 
     printf("######################################\n");
     printf("#                                    #\n");
-    printf("#          CLI OS v1.1               #\n");
+    printf("#          YIGITUX v1.1              #\n");
     printf("#   Licensed under the MIT license.  #\n");
     printf("#                                    #\n");
     printf("######################################\n");
@@ -31,7 +31,7 @@ int main(){
     while (1)
     {
         // Prompt
-        printf("yigit-$ ");
+        printf("yigitux-user-$ ");
 
         // User İnput
         fgets(input, MAX_INPUT, stdin);

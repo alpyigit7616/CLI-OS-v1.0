@@ -1,5 +1,5 @@
 /*
- * CLI-OS v1.1
+ * YIGITUX v1.1
  * Copyright (c) 2026 Yiğit ALP
  *
  * This source code is licensed under the MIT License.
@@ -23,7 +23,7 @@ void cmd_random(char *input) {
     printf("Random number: %d\n", rand() % 100);
 }
 
-// Commands
+// Commands 
 void handle_command(char *input)
 {
     // Command help
@@ -34,7 +34,7 @@ void handle_command(char *input)
 
     // Command: about
     else if (strcmp(input, "about") == 0) {
-        printf("CLI-OS v1.1\n Licensed under the MIT license.\n");
+        printf("YIGITUX v1.1\n Licensed under the MIT license.\n");
     }
 
     // Command(S): echo

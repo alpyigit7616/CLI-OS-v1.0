@@ -1,5 +1,5 @@
 /*
- * CLI-OS v1.1
+ * YIGITUX v1.1
  * Copyright (c) 2026 Yiğit ALP
  *
  * This source code is licensed under the MIT License.

@@ -1,5 +1,5 @@
-# CLI-OS
-CLI-OS is a simple command-line interface project written in C.
+# YIGITUX
+YIGITUX is a simple command-line interface project written in C.
 
 This project was created for learning purposes.
 It focuses on basic input handling and simple command logic.
@@ -19,11 +19,11 @@ It is not a real operating system.
 ## Build:
 Compile with both source files:
 ```bash
-gcc main.c commands.c -o cli-os
+gcc main.c commands.c -o yigitux
 ```
 ## Run:
 ```bash
-./cli-os
+./yigitux
 ```
 
 ## Examples:
@@ -31,8 +31,8 @@ gcc main.c commands.c -o cli-os
 yigit-$ help
 Available commands: help, about, exit, echo, clear, time, random
 
-yigit-$ echo Hello CLI-OS
-Hello CLI-OS
+yigit-$ echo Hello YIGITUX
+Hello YIGITUX
 
 yigit-$ time
 14:35:08
