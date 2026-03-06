@@ -62,11 +62,8 @@ void cmd_random(char *input) {
 // Lists all available commands
 // ------------------------
 void cmd_help(char *input) {
-    printf("Available commands:\n");
-    printf("help\nabout\nexit\necho\nclear\ntime\nrandom\neaster-egg\nfortune\njoke\nfixthebug\nshoweasteregg\nwhoami\nrandlet\nnotepad\nhackmode\nfavrepo\nwhichos\nasciiart\ncredits\nmakemailbro\nmakepasswdbro\nFor details, look to my README.md file (its in the source code!).\n");
+    system("python3 yigitux-help-command.py");
 }
-
-// Command: 
 
 // ------------------------
 // Command: about
@@ -160,26 +157,7 @@ void cmd_showingfun(char *input) {
 // Tells you some random fun developer facts :D
 // ------------------------
 void cmd_joke(char *input){
-    char *jokes[] = {
-        "A random programmer always prefers dark mode. Guess who is him/her?", // Everybody prefer dark mode, right?
-        "My little brother finds a bug on his code, now he is spraying bug spray on the screen.", // What a creative fix!
-        "Fact: 2026 developers use ChatGPT, but not a random indian guy!", // He is crying now! (du du de de da deu deu du!)
-        "Python? No, I LIKE C!!!", // Lol its my favorite language
-        "There are 10 types of people: those who understand binary and those who don't.", // haha, where is the funny part?
-        "Debugging: Removing the needles from the haystack." // This one is my favorite joke!
-    };
-
-    // Number of jokes
-    int num_jokes = sizeof(jokes) / sizeof(jokes[0]);
-
-    // Seed for randomness
-    srand(time(NULL));
-
-    // Pick a random joke
-    int index = rand() % num_jokes;
-
-    // Print the joke
-    printf("%s\n", jokes[index]); 
+    system("python3 yigitux-joke-command.py");
 }
 
 // ------------------------
@@ -376,27 +354,7 @@ void cmd_asciiart(char *input) {
 // Makes you a e-mail adress
 // ------------------------
 void cmd_mail(char *input, char *username, char *mailservice, char *adress) {
-    system("clear");
-    printf("Welcome to makemailbro. Enter your username.\nYour username: ");
-    fgets(username, MAX_INPUT, stdin);
-    username[strcspn(username, "\n")] = 0;
-
-    printf("E-mail service (gmail/outlook/proton): ");
-    fgets(mailservice, MAX_INPUT, stdin);
-    mailservice[strcspn(mailservice, "\n")] = 0;
-
-    if (strcmp(mailservice, "gmail") == 0)
-        snprintf(adress, MAX_INPUT, "%s@gmail.com", username);
-    else if (strcmp(mailservice, "outlook") == 0)
-        snprintf(adress, MAX_INPUT, "%s@outlook.com", username);
-    else if (strcmp(mailservice, "proton") == 0)
-        snprintf(adress, MAX_INPUT, "%s@proton.me", username);
-    else {
-        printf("Unknown service!\n");
-        return;
-    }
-
-    printf("Your e-mail: %s\n", adress);
+    system("python3 yigitux-makebro-commands.py mail");
 }
 
 // ------------------------
@@ -404,53 +362,16 @@ void cmd_mail(char *input, char *username, char *mailservice, char *adress) {
 // Makes you a random password
 // ------------------------
 void cmd_passwd(char *input) {
-    system("clear");
-    printf("----------------------------YIGITUX MAKEPASSWDBRO----------------------------\n");
-    
-    char length_str[MAX_INPUT];
-    int length;
-    
-    printf("Welcome to makepasswdbro! How long should your password be? (8-64): ");
-    fgets(length_str, MAX_INPUT, stdin);
-    length_str[strcspn(length_str, "\n")] = 0;
-    length = atoi(length_str);
-    
-    if (length < 8 || length > 64) {
-        printf("Invalid length! Please enter a number between 8 and 64.\n");
-        return;
-    }
-    
-    char ask_symbols[MAX_INPUT];
-    printf("Include symbols? (!@#$%^&*) (yes/no): ");
-    fgets(ask_symbols, MAX_INPUT, stdin);
-    ask_symbols[strcspn(ask_symbols, "\n")] = 0;
-    
-    // Character pools
-    char lowercase[] = "abcdefghijklmnopqrstuvwxyz";
-    char uppercase[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    char digits[]    = "0123456789";
-    char symbols[]   = "!@#$%^&*()-_=+[]{}";
-    
-    char pool[128];
-    strcpy(pool, lowercase);
-    strcat(pool, uppercase);
-    strcat(pool, digits);
-    if (strcmp(ask_symbols, "yes") == 0)
-        strcat(pool, symbols);
-    
-    int pool_size = strlen(pool);
-    char password[65];
-    
-    srand(time(NULL));
-    for (int i = 0; i < length; i++) {
-        password[i] = pool[rand() % pool_size];
-    }
-    password[length] = '\0';
-    
-    printf("\nYour generated password: %s\n", password);
-    printf("Make sure to save it somewhere safe!\n");
+    system("python3 yigitux-makebro-commands.py passwd");
 }
 
+// -------------------
+// Command: sourcecode
+// Gives you the procets source code link, this command is for test
+// -------------------
+void cmd_sourcecode(char *input) {
+    system("zenity --info --title='Source code - YIGITUX' --text='https://github.com/alpyigit7616/YigiTux'");
+}
 // ------------------------
 // Handle command
 // Maps user input to the corresponding function
@@ -480,5 +401,6 @@ void handle_command(char *input)
     char username[MAX_INPUT], mailservice[MAX_INPUT], adress[MAX_INPUT];
     cmd_mail(input, username, mailservice, adress);}
     else if(strcmp(input, "makepasswdbro") == 0) cmd_passwd(input);
+else if(strcmp(input, "sourcecode") == 0) cmd_sourcecode(input);
     else printf("Unknown command: %s\n", input);
 }
