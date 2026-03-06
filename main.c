@@ -1,5 +1,5 @@
 /*
- * YIGITUX v1.1
+ * YIGITUX v1.3
  * Copyright (c) 2026 Yiğit ALP
  *
  * This source code is licensed under the MIT License.
@@ -20,7 +20,7 @@ int main(){
 
     printf("######################################\n");
     printf("#                                    #\n");
-    printf("#            YIGITUX v1.2            #\n");
+    printf("#            YIGITUX v1.3            #\n");
     printf("#   Licensed under the MIT license.  #\n");
     printf("#                                    #\n");
     printf("######################################\n");

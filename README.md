@@ -14,7 +14,7 @@ It is a mini shell project designed for learning and experimentation.
 - Random number generator
 - Current time display
 - Motivation messages (fortune)
-- **Built-in commands: help, about, exit, echo, clear, time, random, fortune, joke, easter-egg, fixthebug, showeasteregg**
+- **Built-in commands: help, about, exit, echo, clear, time, random, fortune, joke, easter-egg, fixthebug, showeasteregg,whoami,randlet,notepad,hackmode,favrepo,whichos, asciiart, credits, makemailbro, makepasswdbro\n**
 - Developer jokes (joke)
 - Hidden easter eggs
 - Easy to extend with new commands
@@ -49,4 +49,4 @@ See the LICENSE file for more information.
 
 ## Author:
 Yiğit ALP — 2026
-Version 1.2
+Version 1.3
