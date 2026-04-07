@@ -298,8 +298,7 @@ void cmd_notepad(char *input) {
     while(1) {
         printf("notepad> ");
         fgets(line, sizeof(line), stdin);
-
-        // newline temizle
+        
         line[strcspn(line, "\n")] = 0;
 
         if(strcmp(line, ":q") == 0) {
